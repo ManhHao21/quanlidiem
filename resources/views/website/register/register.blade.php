@@ -1,4 +1,4 @@
-@extends('website.components.layout');
+@extends('website.components.layout')
 @section('title')
     Chào mừng bạn đến với dăng kí tuyển sinh đại học
 @endsection

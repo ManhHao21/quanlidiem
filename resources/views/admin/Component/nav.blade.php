@@ -20,11 +20,7 @@
 
                 </ul>
             </li>
-            <li><a href="{{ route('noti.index') }}">Quản lí thông báo</a></li>
 
-            <li>
-                <a href="{{ route('quantri.user.index') }}"><span class="nav-label">Quản lí người dùng</span></a>
-            </li>
             <li>
                 <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Quản lí
                         chung</span><span class="fa arrow"></span></a>
@@ -48,8 +44,10 @@
 
                 </ul>
             </li>
-            <li><a href="{{ route('login') }}">Đăng nhập</a></li>
-
+            <li><a href="{{ route('noti.index') }}">Quản lí thông báo</a></li>
+            <li>
+                <a href="{{ route('quantri.user.index') }}"><span class="nav-label">Quản lí người dùng</span></a>
+            </li>
         </ul>
     </div>
 </nav>

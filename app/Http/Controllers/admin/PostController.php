@@ -28,7 +28,6 @@ class PostController extends Controller
             'title' => 'required|string|max:255',
             'content' => 'required|string',
             'image' => 'nullable|image|max:2048',
-            'category_id' => 'required|exists:categories,id',
         ]);
 
         $validated['slug'] = Str::slug($validated['title']); // Tạo slug từ title
@@ -54,7 +53,6 @@ class PostController extends Controller
             'title' => 'required|string|max:255',
             'content' => 'required|string',
             'image' => 'nullable|image|max:2048',
-            'category_id' => 'required|exists:categories,id',
         ]);
 
         $validated['slug'] = Str::slug($validated['title']); // Tạo slug từ title

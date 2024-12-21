@@ -15,7 +15,7 @@ return new class extends Migration {
             $table->string('title')->nullable();
             $table->text('content')->nullable();
             $table->text('image')->nullable();
-            $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
+            $table->integer('category_id')->nullable();
             $table->string('slug')->unique(); // Thêm trường slug
             $table->boolean('is_published')->default(false); // Thêm trường is_published
             $table->timestamps();

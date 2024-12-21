@@ -81,7 +81,7 @@ class InfomationController extends Controller
         $notification = Notification::findOrFail($id); // Lấy thông báo theo ID
         $users = User::all(); // Lấy danh sách người dùng
 
-        return view('backend.info.edit', compact('notification', 'users')); // Trả về view kèm thông báo và danh sách người dùng
+        return view('admin.info.edit', compact('notification', 'users')); // Trả về view kèm thông báo và danh sách người dùng
     }
 
     public function update(Request $request, $id)
@@ -101,8 +101,7 @@ class InfomationController extends Controller
         $notification->content = $request->content;
         $notification->publish_date = $request->publish_date;
         $notification->expiry_date = $request->expiry_date;
-        $notification->user_id = $request->user_id;
-        $notification->type = $request->user_id == "" ? 1 : 0;
+
 
         // Xử lý hình ảnh
         if ($request->hasFile('image')) {

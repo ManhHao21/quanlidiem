@@ -1,7 +1,7 @@
 <div class="container-fluid sticky-top px-0">
-    <div class="container-fluid topbar bg-dark d-none d-lg-block">
+    <div class="container-fluid  bg-dark d-none d-lg-block">
         <div class="container px-0">
-            <div class="topbar-top d-flex justify-content-between flex-lg-wrap">
+            <div class="d-flex justify-content-between flex-lg-wrap mt-0">
                 <div class="top-info flex-grow-0">
                     {{-- <span class="rounded-circle btn-sm-square bg-primary me-2">
                         <i class="fas fa-bolt text-white"></i>

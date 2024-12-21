@@ -6,10 +6,6 @@
 <body>
 
     <!-- Spinner Start -->
-    <div id="spinner"
-        class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
-        <div class="spinner-grow text-primary" role="status"></div>
-    </div>
     <!-- Spinner End -->
 
 
@@ -201,7 +197,10 @@
     </div>
     <!-- Footer End -->
 
-
+    <div id="chat-circle" class="btn btn-raised">
+        <div id="chat-overlay"></div>
+        <i class="fab fa-rocketchat"></i>
+    </div>
 
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
