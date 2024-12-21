@@ -74,10 +74,10 @@
             @csrf
             <div class="form-group">
                 <label for="search">Nhập mã số sinh viên</label>
-                <input type="text" name="search" id="search" class="form-control" placeholder="Nhập mã số sinh viên"
+                <input type="text" name="search" id="search" class="form-control " placeholder="Nhập mã số sinh viên"
                     value="{{ $search ?? '' }}" required>
             </div>
-            <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+            <button type="submit" class="btn btn-primary mt-3" style="margin-top: 20px">Tìm kiếm</button>
         </form>
 
         <!-- Hiển thị kết quả -->

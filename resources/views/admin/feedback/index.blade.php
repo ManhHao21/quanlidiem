@@ -27,7 +27,7 @@
 @endsection
 
 @section('content')
-    <div class="container">
+    <div class="container"   style="background-color: white;padding:50px">
         <h2 class="text-center">Danh sách phản hồi</h2>
         <table>
             <thead>

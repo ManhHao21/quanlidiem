@@ -16,7 +16,7 @@ class ContactController extends Controller
             return redirect()->back()->with('error', 'Không tìm thấy thông tin ứng viên!');
         }
 
-        return view('form', compact('applicant'));
+        return view('website.register.contact', compact('applicant'));
     }
     public function send(Request $request, $code)
     {

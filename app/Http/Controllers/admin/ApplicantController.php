@@ -19,7 +19,9 @@ class ApplicantController extends Controller
         $applicants = Applicant::with(['major', 'schoolYear', 'subjectBlock', 'province'])->paginate(20);
         return view('admin.applicants.index', compact('applicants'));
     }
-
+    public function SearchResult() {
+        return view("website.register.searchScore");
+    }
     public function getSearchResult(Request $request)
     {
         // Validate input
@@ -36,9 +38,9 @@ class ApplicantController extends Controller
             ->where('school_year_id', $applicant->school_year_id)
             ->first();
 
-        $isPass = $cutoffScore && $applicant->score >= $cutoffScore->score;
+        $isPass = $cutoffScore && $applicant->admission_score >= $cutoffScore->score;
         // Gửi kết quả tới view
-        return view('admin.applicants.search', [
+        return view('website.register.searchScore', [
             'applicant' => $applicant,
             'cutoffScore' => $cutoffScore,
             'isPass' => $isPass,

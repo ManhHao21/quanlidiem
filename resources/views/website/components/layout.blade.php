@@ -135,8 +135,7 @@
                             Sports</a>
                         <a class="btn-link text-white" href=""><i class="fas fa-angle-right text-white me-2"></i>
                             Magazine</a>
-                        <a class="btn-link text-white" href=""><i
-                                class="fas fa-angle-right text-white me-2"></i>
+                        <a class="btn-link text-white" href=""><i class="fas fa-angle-right text-white me-2"></i>
                             Lifestyle</a>
                         <a class="btn-link text-white" href=""><i
                                 class="fas fa-angle-right text-white me-2"></i>
@@ -257,56 +256,54 @@
 
             // Mảng các nội dung chào mừng
             var welcomeMessages = [
-                "Chào mừng bạn đến với hệ thống chat! Bạn muốn làm gì hôm nay?",
-                "Xin chào! Bạn cần giúp đỡ gì không?",
-                "Chào bạn! Hãy chọn một tùy chọn để bắt đầu."
+                "Xin chào! Chào mừng bạn đến với hệ thống hỗ trợ tuyển sinh đại học.",
+                "Chào bạn! Hãy chọn một tùy chọn bên dưới để bắt đầu hành trình tuyển sinh.",
+                "Rất vui được đồng hành cùng bạn trong quá trình đăng ký tuyển sinh. Bạn muốn làm gì hôm nay?"
             ];
 
             // Mảng các tùy chọn cho người dùng chọn
             var buttonOptions = [{
-                    name: 'Trợ giúp',
-                    value: 'help'
+                    name: 'Thông tin tuyển sinh',
+                    value: 'admission_info'
                 },
                 {
-                    name: 'Giới thiệu về sản phẩm',
-                    value: 'product'
+                    name: 'Hỗ trợ đăng ký',
+                    value: 'registration_support'
                 },
                 {
-                    name: 'Liên hệ chúng tôi',
+                    name: 'Liên hệ nhà trường',
                     value: 'contact'
                 },
                 {
-                    name: 'Đăng ký biểu mẫu',
-                    value: 'register'
+                    name: 'Tra cứu hồ sơ',
+                    value: 'application_lookup'
                 }
             ];
 
             // Mảng các câu trả lời tương ứng
             var responseMessages = {
-                help: [
-                    "Chúng tôi luôn sẵn sàng giúp bạn! Hãy mô tả vấn đề bạn gặp phải.",
-                    "Bạn cần trợ giúp về vấn đề gì? Hãy cung cấp thông tin chi tiết nhé!",
-                    "Chào bạn! Vui lòng mô tả khó khăn của bạn để chúng tôi hỗ trợ."
+                admission_info: [
+                    "Bạn có thể xem thông tin tuyển sinh chi tiết tại đây: <a href='/gioi-thieu' target='_blank'>Thông tin tuyển sinh</a>.",
+                    "Tìm hiểu các ngành học và điều kiện xét tuyển tại: <a href='/programs' target='_blank'>Ngành học</a>.",
+                    "Mọi thông tin về kỳ thi tuyển sinh đã được cập nhật tại trang chính thức."
                 ],
-                product: [
-                    "Sản phẩm của chúng tôi mang lại giá trị tuyệt vời! Bạn có muốn biết thêm chi tiết không?",
-                    "Chúng tôi cung cấp các sản phẩm chất lượng cao, phù hợp với nhu cầu của bạn.",
-                    "Bạn quan tâm đến sản phẩm nào? Chúng tôi sẽ gửi thông tin cụ thể."
+                registration_support: [
+                    "Hãy điền đầy đủ thông tin vào biểu mẫu tại: <a href='/dang-ki' target='_blank'>Đăng ký tuyển sinh</a>.",
+                    "Bạn cần hỗ trợ về việc đăng ký? Hãy cung cấp thông tin cụ thể để chúng tôi hỗ trợ.",
+                    "Đăng ký trực tuyến dễ dàng tại đây: <a href='/result' target='_blank'>Tìm kiếm nguyện vọng</a>."
                 ],
                 contact: [
-                    "Bạn có thể liên hệ chúng tôi qua hotline: 1800-123-456.",
-                    "Vui lòng gửi email đến support@company.com để được hỗ trợ.",
-                    "Chúng tôi sẵn sàng hỗ trợ bạn qua trang liên hệ trên website chính thức."
+                    "Bạn có thể liên hệ nhà trường qua hotline: 1800-123-456.",
+                    "Gửi email về địa chỉ: admissions@university.com để nhận phản hồi nhanh chóng.",
+                    "Truy cập trang <a href='/contact' target='_blank'>Liên hệ</a> để biết thêm chi tiết."
                 ],
-                register: [
-                    "Vui lòng chọn một trong các biểu mẫu dưới đây để đăng ký:",
-                    "<a href='/birth-registrations' target='_blank'>Đăng kí khai sinh</a>",
-                    "<a href='/citizens' target='_blank'>Đăng kí công dân</a>",
-                    "<a href='/absence' target='_blank'>Đăng kí tạm vắng</a>",
-                    "<a href='/temp-residence' target='_blank'>Đăng kí tạm trú</a>",
-                    "<a href='/death' target='_blank'>Đăng kí khai tử</a>"
+                application_lookup: [
+                    "Tra cứu hồ sơ tuyển sinh của bạn tại đây: <a href='/result' target='_blank'>Tra cứu hồ sơ</a>.",
+                    "Vui lòng nhập mã hồ sơ để kiểm tra trạng thái tại: <a href='/result' target='_blank'>Kiểm tra hồ sơ</a>.",
+                    "Nếu bạn gặp khó khăn trong việc tra cứu, hãy liên hệ bộ phận hỗ trợ."
                 ]
             };
+
 
             // Khi nhấn vào chat-circle
             $("#chat-circle").click(function() {

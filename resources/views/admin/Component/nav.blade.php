@@ -15,7 +15,7 @@
                         class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
                     <li><a href="{{ route('quantri.posts.index') }}">Quản lí bài viết</a></li>
-                    <li><a href="{{ route('quantri.categories.index') }}">Quản lí tdanh mục</a>
+                    <li><a href="{{ route('quantri.categories.index') }}">Quản lí danh mục</a>
                     </li>
 
                 </ul>
@@ -45,6 +45,7 @@
                 </ul>
             </li>
             <li><a href="{{ route('noti.index') }}">Quản lí thông báo</a></li>
+            <li><a href="{{ route('quantri.feedback.index') }}">Quản lí liên hệ</a></li>
             <li>
                 <a href="{{ route('quantri.user.index') }}"><span class="nav-label">Quản lí người dùng</span></a>
             </li>

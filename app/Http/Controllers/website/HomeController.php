@@ -76,7 +76,7 @@ class HomeController extends Controller
     {
         $introduct = Post::where("title", "giới thiệu")->first();
 
-        $rssFeedUrl = "https://giaoducthoidai.vn/rss/tuyen-sinh-du-hoc-26.rss";
+        $rssFeedUrl = "https://vnexpress.net/rss/giao-duc.rss";
         $rssContent = simplexml_load_file($rssFeedUrl);
 
         // Chuyển đổi nội dung RSS thành mảng để sử dụng trong view
@@ -91,14 +91,24 @@ class HomeController extends Controller
 
             // Làm sạch mô tả
             $description = strip_tags((string) $item->description, '<p><br>');
-
-            $rssArticles[] = [
-                'title' => (string) $item->title,
-                'link' => (string) $item->link,
-                'description' => $description,
-                'published_at' => (string) $item->pubDate,
-                'image' => $image,
-            ];
+            $rssArticles = [];
+            foreach ($rssContent->channel->item as $item) {
+                $rssArticles[] = [
+                    'title' => (string) $item->title,
+                    'link' => (string) $item->link,
+                    'description' => (string) $item->description,
+                    'published_at' => (string) $item->pubDate,
+                    'image' => (string) $item->enclosure['url'] ?? '',
+                    'slug' => isset($item->slug) ? (string) $item->slug : '',
+                ];
+            }
+            // $rssArticles[] = [
+            //     'title' => (string) $item->title,
+            //     'link' => (string) $item->link,
+            //     'description' => $description,
+            //     'published_at' => (string) $item->pubDate,
+            //     'image' => $image,
+            // ];
         }
 
         return view("website.posts.detail", compact("rssArticles", "introduct"));
@@ -146,9 +156,10 @@ class HomeController extends Controller
 
         return redirect()->back()->with("success", "Đăng kí tuyển sinh thành công");
     }
-public function getContact() {
-    return view("website.form.contact");
-}
+    public function getContact()
+    {
+        return view("website.form.contact");
+    }
     /**
      * Store a newly created resource in storage.
      */

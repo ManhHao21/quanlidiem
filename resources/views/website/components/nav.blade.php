@@ -68,6 +68,7 @@
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Đăng kí</a>
                             <div class="dropdown-menu m-0 bg-secondary rounded-0">
                                 <a href="/dang-ki" class="dropdown-item">Đăng kí tuyển sinh</a>
+                                <a href="{{route("applicants.SearchResult")}}" class="dropdown-item">Tìm kiếm nguyện vọng</a>
                             </div>
                         </div>
                         <a href="/contact" class="nav-item nav-link">Liên hệ</a>
