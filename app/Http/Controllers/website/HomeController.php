@@ -41,8 +41,8 @@ class HomeController extends Controller
 
     public function postsDetail($slug)
     {
-        $postslide = Post::where("slug", $slug)->firstOrFail();
-        $relatedPosts = Post::where('category_id', $postslide->category_id)
+        $introduct = Post::where("slug", $slug)->firstOrFail();
+        $relatedPosts = Post::where('category_id', $introduct->category_id)
             ->where('slug', '!=', $slug)
             ->take(3)
             ->get();
@@ -63,9 +63,9 @@ class HomeController extends Controller
                 'slug' => isset($item->slug) ? (string) $item->slug : '',
             ];
         }
-
+        
         // Trả dữ liệu ra view
-        return view("website.posts.detail", compact("postslide", "relatedPosts", "rssArticles"));
+        return view("website.posts.detail", compact("introduct", "relatedPosts", "rssArticles"));
     }
 
 
@@ -159,6 +159,38 @@ class HomeController extends Controller
     public function getContact()
     {
         return view("website.form.contact");
+    }
+    public function scores($slug)
+    {
+        $rssFeedUrl = "https://vnexpress.net/rss/giao-duc.rss";
+        $rssContent = simplexml_load_file($rssFeedUrl);
+
+        // Chuyển đổi nội dung RSS thành mảng để sử dụng trong view
+        $rssArticles = [];
+        foreach ($rssContent->channel->item as $item) {
+            // Lấy hình ảnh từ thẻ <image> hoặc <description>
+            $image = (string) $item->image ?? '';
+            if (empty($image)) {
+                preg_match('/<img src="([^"]+)"/', (string) $item->description, $matches);
+                $image = $matches[1] ?? '';
+            }
+
+            // Làm sạch mô tả
+            $description = strip_tags((string) $item->description, '<p><br>');
+            $rssArticles = [];
+            foreach ($rssContent->channel->item as $item) {
+                $rssArticles[] = [
+                    'title' => (string) $item->title,
+                    'link' => (string) $item->link,
+                    'description' => (string) $item->description,
+                    'published_at' => (string) $item->pubDate,
+                    'image' => (string) $item->enclosure['url'] ?? '',
+                    'slug' => isset($item->slug) ? (string) $item->slug : '',
+                ];
+            }
+            $introduct = Post::where("slug", $slug)->first();
+            return view("website.posts.detail", compact("introduct", "rssArticles"));
+        }
     }
     /**
      * Store a newly created resource in storage.

@@ -24,6 +24,7 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
+        // dd($request);
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'content' => 'required|string',
@@ -32,6 +33,7 @@ class PostController extends Controller
 
         $validated['slug'] = Str::slug($validated['title']); // Tạo slug từ title
         $validated['is_published'] = $request->has('is_published'); // Lấy giá trị is_published
+        $validated['category_id'] = $request->has('category_id') ?? ""; // Lấy giá trị is_published
 
         if ($request->hasFile('image')) {
             $validated['image'] = $request->file('image')->store('posts', 'public'); // Lưu ảnh vào thư mục public/posts
@@ -57,6 +59,7 @@ class PostController extends Controller
 
         $validated['slug'] = Str::slug($validated['title']); // Tạo slug từ title
         $validated['is_published'] = $request->has('is_published'); // Lấy giá trị is_published
+        $validated['category_id'] = $request->input('category_id')?? ""; // Lấy giá trị is_published
 
         if ($request->hasFile('image')) {
             $validated['image'] = $request->file('image')->store('posts', 'public'); // Lưu ảnh mới

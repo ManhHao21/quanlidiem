@@ -26,7 +26,7 @@
                                 <a href="{{ route('trangchu.postsDetail', $post->slug) }}"
                                     class="display-4 text-dark mb-0 link-hover">{{ $post->title }}</a>
                             </div>
-                            <p class="mt-3 mb-4">{{ Str::limit($post->content, 150) }}</p>
+                            <p class="mt-3 mb-4">{!! Str::limit($post->content, 150) !!}</p>
                         @endforeach
                     @else
                         <p>Không có bài viết nào trong danh mục này.</p>

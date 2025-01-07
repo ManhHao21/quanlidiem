@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\admin\UserController;
 use App\Http\Controllers\admin\YearController;
 use App\Http\Controllers\admin\MajorsController;
+use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\admin\ProvinceController;
 use App\Http\Controllers\Admin\ApplicantController;
@@ -40,7 +41,8 @@ Route::name('quantri.')->middleware('auth')->group(function () {
     Route::get('cutoff_scores/editByYear/{yearId}', [CutoffScoresController::class, 'editByYear'])->name('cutoff_scores.editByYear');
     Route::put('cutoff_scores/updateByYear/{yearId}', [CutoffScoresController::class, 'updateByYear'])->name('cutoff_scores.updateByYear');
     Route::delete('school_years/{id}', [CutoffScoresController::class, 'destroy'])->name('school_years.destroy');
-
+    Route::get('settings', [SettingController::class, 'index'])->name('settings.index');
+    Route::post('settings', [SettingController::class, 'update'])->name('settings.update');
     Route::resource('cutoff_scores', CutoffScoresController::class);
     Route::resource('province', ProvinceController::class);
     Route::resource('feedback', FeedbackController::class);
@@ -62,7 +64,8 @@ Route::post('/contact/{code}', [ContactController::class, 'send'])->name('contac
 
 Route::get('/trang-chu', [\App\Http\Controllers\website\HomeController::class, "index"])->name("trangchu.index");
 Route::get('/contact', [\App\Http\Controllers\website\HomeController::class, "getContact"])->name("trangchu.getContact");
-Route::get('/gioi-thieu', [\App\Http\Controllers\website\HomeController::class, "introduce"])->name("trangchu.introduce");
+Route::get('/gioi-thieu', [\App\Http\Controllers\website\HomeController::class, "introduce"])->name(name: "trangchu.introduce");
+Route::get('/{slug}', [\App\Http\Controllers\website\HomeController::class, "scores"])->name("trangchu.scores");
 Route::get('/dang-ki', [\App\Http\Controllers\website\HomeController::class, "registerForm"])->name("trangchu.register");
 Route::post('/dang-ki', [\App\Http\Controllers\website\HomeController::class, "registerFormPost"])->name("trangchu.registerFormPost");
 Route::get('/trang-chu/{slug}', [\App\Http\Controllers\website\HomeController::class, "postsDetail"])->name("trangchu.postsDetail");

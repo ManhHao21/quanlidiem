@@ -11,14 +11,13 @@
                                 tọa lạc tại thành phố Vinh, trung tâm của tỉnh Nghệ An.
                                 Trường đại học này nằm trong một khu vực nổi tiếng với di sản văn hóa phong phú và ý nghĩa lịch sử, khiến nơi đây trở thành một nơi đầy cảm hứng cho việc học tập và nghiên cứu. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
                             <div class="rounded">
-                                <iframe class="rounded w-100" style="height: 425px;"
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387191.33750346623!2d-73.97968099999999!3d40.6974881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1694259649153!5m2!1sen!2sbd"
-                                    loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                {!! html_entity_decode(setting('google_map')) !!}
+
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-7">
-                        <form action="" class="mb-4">
+                        {{-- <form action="" class="mb-4">
                             <div class="row g-4">
                                 <div class="col-lg-6">
                                     <input type="text" class="w-100 form-control border-0 py-3" name="name"
@@ -44,14 +43,14 @@
                                         Now</button>
                                 </div>
                             </div>
-                        </form>
+                        </form> --}}
                         <div class="row g-4">
                             <div class="col-xl-6">
                                 <div class="d-flex p-4 rounded bg-white">
                                     <i class="fas fa-map-marker-alt fa-2x text-primary me-4"></i>
                                     <div>
-                                        <h4>Address</h4>
-                                        <p class="mb-0">123 Street New York.USA</p>
+                                        <h4>Địa chỉ</h4>
+                                        <p class="mb-0">{{setting('address')}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -59,7 +58,7 @@
                                 <div class="d-flex p-4 rounded bg-white">
                                     <i class="fas fa-envelope fa-2x text-primary me-4"></i>
                                     <div>
-                                        <h4>Mail Us</h4>
+                                        <h4>Mail</h4>
                                         <p class="mb-0">info@example.com</p>
                                     </div>
                                 </div>
@@ -68,8 +67,8 @@
                                 <div class="d-flex p-4 rounded bg-white">
                                     <i class="fa fa-phone-alt fa-2x text-primary me-4"></i>
                                     <div>
-                                        <h4>Telephone</h4>
-                                        <p class="mb-0">(+012) 3456 7890</p>
+                                        <h4>Số điện thoại: </h4>
+                                        <p class="mb-0">{{setting('phone')}}</p>
                                     </div>
                                 </div>
                             </div>

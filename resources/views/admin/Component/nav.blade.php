@@ -4,7 +4,11 @@
             <li class="nav-header">
                 <div class="dropdown profile-element logo">
 
-                    <a href="{{ route('trangchu.index') }}" class="d-none d-lg-block" style="font-size: 16px"> WEBSITE</a>
+                    <a href="{{ route('trangchu.index') }}" class="d-none d-lg-block" style="font-size: 16px"> 
+                        <img src="{{ asset('storage/' . setting('image')) }}" alt="Setting Image" width="90" height="90"/>
+
+
+                    </a>
                 </div>
                 <div class="logo-element">
                     <img src="{{ asset('backend') }}/img/logo.png" alt="" srcset="">
@@ -49,6 +53,7 @@
             <li>
                 <a href="{{ route('quantri.user.index') }}"><span class="nav-label">Quản lí người dùng</span></a>
             </li>
+            <li><a href="{{ route('quantri.settings.index') }}">Cài đặt hệ thống</a></li>
         </ul>
     </div>
 </nav>

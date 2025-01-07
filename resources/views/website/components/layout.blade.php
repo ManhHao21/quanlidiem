@@ -45,7 +45,7 @@
         </div>
     </div>
     <!-- Footer Start -->
-    <div class="container-fluid bg-dark footer py-5">
+    {{-- <div class="container-fluid bg-dark footer py-5">
         <div class="container py-5">
             <div class="pb-4 mb-4" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
                 <div class="row g-4">
@@ -193,7 +193,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Footer End -->
 
     <div id="chat-circle" class="btn btn-raised">

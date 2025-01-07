@@ -47,8 +47,7 @@
                 <div class="col-12 col-sm-1 col-lg-6 col-xl-66 col-xxl-6 d-flex align-items-center">
                     <div id="logo">
                         <a href="/trang-chu" class="d-block">
-                            <img src="{{ asset('website') }}/img/vu-logo.png" alt="Vinh University" width="90px"
-                                height="90px">
+                            <img src="{{ asset('storage/' . setting('image')) }}" alt="Setting Image" width="90" height="90"/>
                         </a>
                     </div>
                     <div class="name-uni ms-2 ps-2 vu_d-md-none">
@@ -68,6 +67,8 @@
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Đăng kí</a>
                             <div class="dropdown-menu m-0 bg-secondary rounded-0">
                                 <a href="/dang-ki" class="dropdown-item">Đăng kí tuyển sinh</a>
+                                <a href="/thong-bao-diem-chuan-trung-tuyen-va-ket-qua-xet-tuyen-dao-tao-trinh-do-thac-si-dot-1-nam-2024" class="dropdown-item">Thông báo điểm chuẩn trúng tuyển</a>
+                                <a href="/thong-bao-gia-han-thoi-gian-nhan-ho-so-va-to-chuc-xet-tuyen-tuyen-sinh-dao-tao-trinh-do-thac-si-dot-2-nam-2024" class="dropdown-item">Tuyển sinh sau đại học</a>
                                 <a href="{{route("applicants.SearchResult")}}" class="dropdown-item">Tìm kiếm nguyện vọng</a>
                             </div>
                         </div>
